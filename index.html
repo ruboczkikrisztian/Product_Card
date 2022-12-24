@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Product Card UI Design</title>
+
+  <!-- Vendor Script -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="imgBx">
+      <img src="./black.png" alt="Nike Jordan Proto-Lyte Image">
+    </div>
+    <div class="details">
+      <div class="content">
+        <h2>iPhone 12 <br>
+            <br>
+        </h2>
+        <p>
+            The iPhone 12 provides the best user experience, with the A14 Bionic chip and a Super Retina XDR OLED display, protected by a new Ceramic Shield. The iPhone 12 can take superb pictures even in Night Mode with its 12-megapixel dual camera system which includes a wide and an ultra-wide angle lens. All of these exceptional features are complemented by a fresh new design, a MagSafe system designed to charge in wireless mode and support for faster 5G cellular networks.
+        </p>
+        <p class="product-colors">Available Color:
+          <span class="black active" data-color-primary="#000" data-color-sec="#212121" data-pic="./black.png"></span>
+          <span class="grey" data-color-primary="#000" data-color-sec="#474642" data-pic="./grey.png"></span>
+          <span class="blue" data-color-primary="#000" data-color-sec="#033357" data-pic="./blue.png"></span>
+        </p>
+        <button>Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+ 
+
+  <script>
+    // Change The Picture and Associated Element Color when Color Options Are Clicked.
+    $(".product-colors span").click(function() {
+      $(".product-colors span").removeClass("active");
+      $(this).addClass("active");
+      $(".active").css("border-color", $(this).attr("data-color-sec"))
+      $("body").css("background", $(this).attr("data-color-primary"));
+      $(".content h2").css("color", $(this).attr("data-color-sec"));
+      $(".content h3").css("color", $(this).attr("data-color-sec"));
+      $(".container .imgBx").css("background", $(this).attr("data-color-sec"));
+      $(".container .details button").css("background", $(this).attr("data-color-sec"));
+      $(".imgBx img").attr('src', $(this).attr("data-pic"));
+    });
+  </script>
+
+</body>
+
+</html>
